@@ -34,15 +34,12 @@ module Templating =
 
 module Site =
     open WebSharper.UI.Next.Html
+    open WebSharper.UI.Next.Client
 
-    let HomePage ctx uname =
-        let title =
-                match uname with
-                | Some u -> h1 [text ("Welcome" + u)]
-                | None -> h1 [text "Login"]
+    let HomePage (ctx:Context<EndPoint>) uname =
+
         Templating.Main ctx EndPoint.Home "Home" [
             
-            title
             div [client <@ Client.Main uname @>]
         ]
 

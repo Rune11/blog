@@ -11,8 +11,17 @@ module Server =
             Password: string
         }
 
-    let ValidUsername = "Username123"
-    let ValidPassword = "P455W0RD"
+    
+
+    let ValidUsername = "user"
+    let ValidPassword = "pass"
+
+    [<Rpc>]
+    let Logout () =
+        let ctx = Web.Remoting.GetContext()
+        async {
+            do! ctx.UserSession.Logout()
+        }
     
     [<Rpc>]
     let Login (logindata:LoginInfo) =
