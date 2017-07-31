@@ -40,7 +40,7 @@ module Site =
 
         Templating.Main ctx EndPoint.Home "Home" [
             
-            div [client <@ Client.Main uname @>]
+            client <@ Client.Main uname @>
         ]
 
     [<Website>]
