@@ -31,7 +31,7 @@ module Client =
     let Main (uname: string option) =
         let rvUname = Var.Create ""
         let rvPassword = Var.Create ""
-        let loggedin = defaultArg uname ""
+ //       let loggedin = defaultArg uname ""
 
         let title =
             match uname with
